@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding:2px;
+}
+
+.body {
+  width: min(800px, 90vw);
+  margin: 3em;
+}
+
+.title {
+  font-size: 28px;
+  text-transform: capitalize;
+  padding: 0.1em;
+}
+
+.author {
+  font-size: 20px;
+}
+
+.content {
+  font-size: 18px;
+  padding:5px 0
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+.button {
+  border: none;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+}

@@ -18,9 +18,13 @@ const Navbar = () => {
     navigate("/addblog");
   };
 
+  const onHome = () => {
+    navigate("/");
+  }
+
   return (
     <div className={Style.container}>
-      <h2 className={Style.title}>Blogs</h2>
+      <h2 className={Style.title} onClick={onHome}>Blogs</h2>
       <form className={Style.form} >
         <input type="text" onChange={onChange} className={Style.input} />
         <button className={Style.button} onClick={onSearch} >

@@ -13,7 +13,6 @@ export const getBlogs = async (): Promise<
 > => {
   try {
     const { data } = await blogAxios.get("/blogs");
-    console.log("data", data);
     return { data };
   } catch (err) {
     console.log("error", err);
@@ -22,7 +21,34 @@ export const getBlogs = async (): Promise<
 
 export const addBlog = async (body: IBlog) => {
   try {
-    const data = await blogAxios.post("/blogs", body);
+    const { data } = await blogAxios.post("/blogs", body);
+    return data;
+  } catch (err) {
+    console.log("error", err);
+  }
+};
+
+export const getBlog = async ({
+  id,
+}: {
+  id: string;
+}): Promise<
+  | {
+      data: IBlog;
+    }
+  | undefined
+> => {
+  try {
+    const { data } = await blogAxios.get(`/blogs/${id}`);
+    return { data };
+  } catch (err) {
+    console.log("error", err);
+  }
+};
+
+export const updateBlog = async (body: IBlog) => {
+  try {
+    const { data } = await blogAxios.put(`/blogs/${body.id}`, body);
     return data;
   } catch (err) {
     console.log("error", err);

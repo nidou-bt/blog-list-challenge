@@ -10,7 +10,9 @@
 .title {
   font-size: 25px;
   margin-left: 2em;
+  cursor: pointer;
 }
+
 
 .form {
   display: flex;
@@ -19,7 +21,7 @@
 
 .input {
   border-radius: 9999px;
-  padding-left: 5px;
+  padding-left: 10px;
 }
 
 .input:hover, 

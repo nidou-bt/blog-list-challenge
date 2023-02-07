@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Style from './Home.module.css';
+import Style from "./Home.module.css";
 import { getBlogs } from "../../api/blog-api";
-import Blog from "../../components/blog/Blog";
+import Blog from "../../components/blog/BlogCard";
 import Navbar from "../../shared/navbar/Navbar";
 import { IBlog } from "../../types/types";
 
@@ -13,9 +13,9 @@ const Home = () => {
     setLoading(true);
     const props = await getBlogs();
     if (!!props!.data) {
-      setLoading(false);
       setBlogs(props!.data);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -24,10 +24,10 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
+
       <section className={Style.container}>
         {loading ? (
-          <h2 className={Style.loading}>Lading...</h2>
+          <h2 className={Style.loading}>Loading...</h2>
         ) : !loading && !!blogs ? (
           <section className={Style.list}>
             {blogs.map((blog) => {
