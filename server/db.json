@@ -1,0 +1,20 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode",
+      "content": "azeazeazeaze",
+      "upVote": 0,
+      "downVote": 0
+    },
+    {
+      "id": 2,
+      "title": "json-server2",
+      "author": "typicode2",
+      "content": "azeazeazeaze2",
+      "upVote": 0,
+      "downVote": 0
+    }
+  ]
+}
