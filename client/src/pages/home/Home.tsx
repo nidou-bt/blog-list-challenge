@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Style from './Home.module.css';
 import { getBlogs } from "../../api/blog-api";
 import Blog from "../../components/blog/Blog";
 import Navbar from "../../shared/navbar/Navbar";
@@ -24,13 +25,15 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <section>
+      <section className={Style.container}>
         {loading ? (
-          <h2>Lading...</h2>
+          <h2 className={Style.loading}>Lading...</h2>
         ) : !loading && !!blogs ? (
-          blogs.map((blog) => {
-            return <Blog data={blog} key={blog.id} />;
-          })
+          <section className={Style.list}>
+            {blogs.map((blog) => {
+              return <Blog data={blog} key={blog.id} />;
+            })}
+          </section>
         ) : null}
       </section>
     </div>
