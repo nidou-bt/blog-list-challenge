@@ -17,16 +17,17 @@ const Blog = () => {
     }
     setLoading(false);
   };
+  
   useEffect(() => {
     handleGet();
   }, []);
 
-  const onVote = ({value}: {value:"upVote" | "downVote"}) => {
-    if(value === "upVote") {
-      return updateBlog({...blog, upVote: blog.upVote+1})
+  const onVote = ({ value }: { value: "upVote" | "downVote" }) => {
+    if (value === "upVote") {
+      return updateBlog({ ...blog, upVote: blog.upVote + 1 });
     }
-    return updateBlog({...blog, downVote: blog.downVote+1})
-  }
+    return updateBlog({ ...blog, downVote: blog.downVote + 1 });
+  };
 
   if (loading) {
     return <h3>Loading...</h3>;
@@ -39,8 +40,18 @@ const Blog = () => {
         <p className={Style.author}>{blog.author}</p>
         <p className={Style.content}>{blog.content}</p>
         <div className={Style.buttons}>
-          <button className={Style.button} onClick={()=>onVote({value:"upVote"})}>Up Vote</button>
-          <button className={Style.button} onClick={()=>onVote({value:"downVote"})}>Down Vote</button>
+          <button
+            className={Style.button}
+            onClick={() => onVote({ value: "upVote" })}
+          >
+            Up Vote
+          </button>
+          <button
+            className={Style.button}
+            onClick={() => onVote({ value: "downVote" })}
+          >
+            Down Vote
+          </button>
         </div>
       </div>
     </div>

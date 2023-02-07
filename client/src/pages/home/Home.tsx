@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, ChangeEvent } from "react";
 import Style from "./Home.module.css";
 import { getBlogs } from "../../api/blog-api";
 import Blog from "../../components/blog/BlogCard";
@@ -8,6 +8,7 @@ import { IBlog } from "../../types/types";
 const Home = () => {
   const [blogs, setBlogs] = useState([] as IBlog[]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [searchWorld, setsearchWorld] = useState<string>("");
 
   const handleGet = async () => {
     setLoading(true);
@@ -22,15 +23,32 @@ const Home = () => {
     handleGet();
   }, []);
 
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    return setsearchWorld(e.target.value.trim());
+  };
+
+  const onSearchWorld = (item: IBlog) => {
+    let isTrue: boolean = false;
+    Object.keys(item).forEach((el) => {
+      if (
+        el !== "id" &&
+        item[el as keyof IBlog].toString().includes(searchWorld)
+      ) {
+        isTrue = true;
+      }
+    });
+    return isTrue;
+  };
+
   return (
     <div>
-
+      <Navbar handleSearch={handleSearch} />
       <section className={Style.container}>
         {loading ? (
           <h2 className={Style.loading}>Loading...</h2>
         ) : !loading && !!blogs ? (
           <section className={Style.list}>
-            {blogs.map((blog) => {
+            {blogs.filter(onSearchWorld).map((blog) => {
               return <Blog data={blog} key={blog.id} />;
             })}
           </section>

@@ -1,18 +1,13 @@
-import { useState } from 'react'
+import { ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import Style from "./Navbar.module.css";
 
-const Navbar = () => {
-  const navigate = useNavigate();
-  const [search, setSearch] = useState<string>("")
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-  };
+type Props = {
+  handleSearch: (e: ChangeEvent<HTMLInputElement>) => void;
+};
 
-  const onSearch = (e: any) => {
-    e.preventDefault();
-    console.log("search", search);
-  };
+const Navbar = ({ handleSearch }: Props) => {
+  const navigate = useNavigate();
 
   const onAdd = () => {
     navigate("/addblog");
@@ -20,16 +15,18 @@ const Navbar = () => {
 
   const onHome = () => {
     navigate("/");
-  }
+  };
 
   return (
     <div className={Style.container}>
-      <h2 className={Style.title} onClick={onHome}>Blogs</h2>
-      <form className={Style.form} >
-        <input type="text" onChange={onChange} className={Style.input} />
-        <button className={Style.button} onClick={onSearch} >
-          search
-        </button>
+      <h2 className={Style.title} onClick={onHome}>
+        Blogs
+      </h2>
+      <form className={Style.form}>
+        <label className={Style.label} htmlFor="search">
+          Search
+        </label>
+        <input type="text" onChange={handleSearch} className={Style.input} />
       </form>
       <button
         className={Style.button}

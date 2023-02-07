@@ -3,6 +3,6 @@ export interface IBlog {
   title: string;
   author: string;
   content: string;
-  upVote: string;
-  downVote: string;
+  upVote: number;
+  downVote: number;
 }
