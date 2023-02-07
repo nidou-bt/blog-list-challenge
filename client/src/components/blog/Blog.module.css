@@ -1,0 +1,43 @@
+.container {
+  width: 250px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:5px;
+  border-radius:5px
+}
+
+
+.title {
+  font-size: 22px;
+  text-transform: capitalize;
+}
+
+.author {
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.content {
+  /* width: 300px; */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap:5px;
+}
+
+.button {
+    border: none;
+border-radius: 10px;
+width: 100px;
+height: 30px;
+}
