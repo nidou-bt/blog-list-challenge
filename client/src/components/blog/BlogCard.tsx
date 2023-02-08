@@ -1,4 +1,3 @@
-import React from "react";
 import Style from "./Blog.module.css";
 import { IBlog } from "../../types/types";
 import { useNavigate } from "react-router-dom";
@@ -22,13 +21,12 @@ const BlogCard = ({ data }: Props) => {
           ? { border: "2px solid red" }
           : { border: "2px solid green" }
       }
-      role="button" onClick={onMore}
+      role="button"
+      onClick={onMore}
     >
       <h4 className={Style.title}>{data.title}</h4>
       <p className={Style.author}>{data.author}</p>
-      <p className={Style.content} >
-        {data.content}
-      </p>
+      <p className={Style.content}>{data.content}</p>
     </div>
   );
 };

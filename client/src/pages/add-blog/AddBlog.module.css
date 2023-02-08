@@ -6,32 +6,32 @@
 }
 
 .form {
-    width:min(90vw, 800px)
+  width: min(90vw, 800px);
 }
 
 .item {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  margin:10px
+  margin: 10px;
 }
 
 .label {
-    font-size: 18px;
-    text-transform: capitalize;
-    padding-left: 2px;
+  font-size: 18px;
+  text-transform: capitalize;
+  padding-left: 2px;
 }
 
 .input {
-    border-radius: 8px;
-    padding-left: 5px;
-    width:100%
+  border-radius: 8px;
+  padding-left: 5px;
+  width: 100%;
 }
 
 .buttons {
   display: flex;
   justify-content: end;
-  margin-right:20px
+  margin-right: 20px;
 }
 
 .button {
@@ -40,5 +40,5 @@
   text-transform: capitalize;
   font-size: 18px;
   cursor: pointer;
-  border:none;
+  border: none;
 }

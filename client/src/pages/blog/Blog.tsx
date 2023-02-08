@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getBlog, updateBlog } from "../../api/blog-api";
 import { IBlog } from "../../types/types";
@@ -17,7 +17,7 @@ const Blog = () => {
     }
     setLoading(false);
   };
-  
+
   useEffect(() => {
     handleGet();
   }, []);
