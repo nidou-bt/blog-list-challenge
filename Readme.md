@@ -1,7 +1,7 @@
-# Contact List Chanllenge
+# Blog List Chanllenge
 
 This folder contained a project with 2 parts:
-**REST API** using [Json-server](https://github.com/typicode/json-server). 
+**Fake REST API** using [Json-server](https://github.com/typicode/json-server). 
 **React With Typescript** using [React](https://reactjs.org/)
 
 ## Getting started
