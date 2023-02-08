@@ -27,7 +27,7 @@ npm install
 ### 2. Start the REST API server
 
 ```
-npm run dev
+npm run start
 ```
 
 The server is now running on `http://localhost:3001`. You can now run the API requests, e.g. [`http://localhost:3001/blogs`].
@@ -39,5 +39,5 @@ To Start the react client you need to follow this steps:
 First add .env file with "REACT_APP_BASE_URL"="3001". You can find an example of the file with name .env.example.
 After that you can run the following script
 ```
-npm start
+npm run start
 ```
