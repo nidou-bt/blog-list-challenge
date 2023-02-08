@@ -19,8 +19,8 @@ const BlogCard = ({ data }: Props) => {
       className={Style.container}
       style={
         data.downVote > data.upVote
-          ? { border: "1px solid red" }
-          : { border: "1px solid green" }
+          ? { border: "2px solid red" }
+          : { border: "2px solid green" }
       }
       role="button" onClick={onMore}
     >

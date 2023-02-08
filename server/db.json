@@ -13,7 +13,7 @@
       "title": "json-server2",
       "author": "typicode2",
       "content": "In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.",
-      "upVote": 0,
+      "upVote": 2,
       "downVote": 1
     },
     {
@@ -29,7 +29,7 @@
       "title": "json-server2",
       "author": "typicode2",
       "content": "In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.",
-      "upVote": 0,
+      "upVote": 1,
       "downVote": 1
     },
     {
@@ -39,6 +39,38 @@
       "content": "In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.",
       "upVote": 0,
       "downVote": 1
+    },
+    {
+      "title": "test",
+      "author": "test",
+      "content": "test",
+      "upVote": 0,
+      "downVote": 0,
+      "id": "8b153d20-6d1d-4498-8492-4824fb061763"
+    },
+    {
+      "title": "test",
+      "author": "test",
+      "content": "test",
+      "upVote": 1,
+      "downVote": 1,
+      "id": "13539750-80e9-48f9-b737-87c8bfcdc078"
+    },
+    {
+      "title": "test3",
+      "author": "test3",
+      "content": "test3",
+      "upVote": 0,
+      "downVote": 1,
+      "id": "871729bd-1dda-4ee7-bcc1-94051c3df86a"
+    },
+    {
+      "title": "test4",
+      "author": "test",
+      "content": "test",
+      "upVote": 0,
+      "downVote": 0,
+      "id": "f3c38bd3-f651-4bc8-94d8-1cf395f07cb9"
     }
   ]
 }
