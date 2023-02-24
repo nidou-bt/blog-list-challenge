@@ -1,4 +1,4 @@
-export interface IBlog {
+export interface IBlog extends Record<string, string | number> {
   id: string;
   title: string;
   author: string;

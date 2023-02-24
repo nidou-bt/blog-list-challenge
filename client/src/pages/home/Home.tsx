@@ -27,18 +27,30 @@ const Home = () => {
     return setsearchWorld(e.target.value.trim());
   };
 
-  const onSearchWorld = (item: IBlog) => {
+  const onSearchWorld = <T extends Record<string, string | number>>(
+    item: T
+  ) => {
     let isTrue: boolean = false;
     Object.keys(item).forEach((el) => {
-      if (
-        el !== "id" &&
-        item[el as keyof IBlog].toString().includes(searchWorld)
-      ) {
+      if (item[el].toString().includes(searchWorld)) {
         isTrue = true;
       }
     });
     return isTrue;
   };
+
+  // const onSearchWorld = (item: IBlog) => {
+  //   let isTrue: boolean = false;
+  //   Object.keys(item).forEach((el) => {
+  //     if (
+  //       el !== "id" &&
+  //       item[el as keyof IBlog].toString().includes(searchWorld)
+  //     ) {
+  //       isTrue = true;
+  //     }
+  //   });
+  //   return isTrue;
+  // };
 
   return (
     <div>
@@ -48,7 +60,7 @@ const Home = () => {
           <h2 className={Style.loading}>Loading...</h2>
         ) : !loading && !!blogs ? (
           <section className={Style.list}>
-            {blogs.filter(onSearchWorld).map((blog) => {
+            {blogs.filter((item) => onSearchWorld<IBlog>(item)).map((blog) => {
               return <Blog data={blog} key={blog.id} />;
             })}
           </section>
